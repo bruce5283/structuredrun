@@ -20,6 +20,7 @@ window.function = function (time, seq) {
    <!-- Display the countdown timer in an element -->
 <div class = "container">
 <p id="pre"></p>
+<p id ="des"></p>
 <button id="btn" onclick="playBuffer()">Start Timer</button>
 </div>
 <audio controls id = "audio" src = "https://storage.googleapis.com/glide-prod.appspot.com/uploads-v2/yx58r6aGlO9tUxUcF6qZ/pub/5NOkMOzp8x6Fgh6qsuTP.wav"/>
@@ -48,6 +49,13 @@ font-weight: ${fweight};
 text-align: ${align};
 font-family: verdana;
 font-size: ${fsize}px;
+}
+
+#des {
+font-weight: ${500};
+text-align: ${align};
+font-family: verdana;
+font-size: ${16}px;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -102,7 +110,8 @@ function playElement() {
 
 function countdown() {
   document.getElementById("pre").style.color ="#12A89E";
-  document.getElementById("pre").innerHTML = --time + "s work time";
+  document.getElementById("pre").innerHTML = --time + "s in your run";
+  document.getElementById("des").innerHTML = "Regular Pace";
   if(time === 0) return onend();
   setTimeout(countdown, 1000);
 }
