@@ -77,6 +77,8 @@ color: #12A89E;
 // Set the date we're counting down to
 let time = ${time};
 let seq = ${seq};
+let minutes = Math.floor((time%(1000*60*60))/(1000*60);
+let seconds = Math.floor((time % (1000 * 60)) / 1000);
 
 const mediaElement = document.getElementById("audio");
 mediaElement.controls = false;
@@ -110,7 +112,8 @@ function playElement() {
 
 function countdown() {
   document.getElementById("pre").style.color ="#12A89E";
-  document.getElementById("pre").innerHTML = --time + "s in your run";
+  time--
+  document.getElementById("pre").innerHTML = minutes+"minutes" + seconds+ "seconds left in your run";
   document.getElementById("des").innerHTML = "Regular Pace";
   if(time === 0) return onend();
   setTimeout(countdown, 1000);
